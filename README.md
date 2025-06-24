@@ -1,9 +1,10 @@
-# 🧠 Emotion Classification from Text 😃😢😡
+# 💭 Emotion Detector Web App 😃😢😡
 
-Welcome to the **Emotion Classification** project! This repository contains a machine learning pipeline to detect emotions from text using the GoEmotions dataset. Whether you're building a chatbot, analyzing social media, or just curious about NLP, this project is for you! 🚀
+Welcome to the **Emotion Detector Web App**! This project is a user-friendly web application that detects emotions from text using a machine learning model trained on the GoEmotions dataset. Whether you're building a chatbot, analyzing social media, or just curious about NLP, this project is for you! 🚀
 
 ## 📦 Features
 - Detects a wide range of emotions from text
+- Beautiful and interactive web interface (Streamlit)
 - Preprocessing, training, and evaluation scripts included
 - Uses scikit-learn for easy customization
 - Ready-to-use trained model
@@ -11,7 +12,7 @@ Welcome to the **Emotion Classification** project! This repository contains a ma
 ## 📁 Project Structure
 ```
 GALLERY/
-├── app.py                # (Optional) App interface for predictions
+├── app.py                # Streamlit web app for emotion detection
 ├── train.py              # Training and evaluation script
 ├── model.py              # Model pipeline definition
 ├── preprocess.py         # Text cleaning utilities
@@ -26,7 +27,7 @@ GALLERY/
 └── README.md             # Project documentation
 ```
 
-## 🛠️ How to Run
+## 🛠️ How to Run the Web App
 
 1. **Clone the repository**
    ```bash
@@ -36,20 +37,22 @@ GALLERY/
 
 2. **Install dependencies**
    ```bash
-   pip install -r requirements.txt
+   pip install streamlit scikit-learn pandas numpy joblib
    ```
-   *(If `requirements.txt` is missing, install: pandas, numpy, scikit-learn, joblib)*
 
-3. **Train the model**
+3. **Train the model (if not already trained)**
    ```bash
    python train.py
    ```
    This will preprocess the data, train the model, and save it as `emotion_model.pkl`.
 
-4. **(Optional) Predict emotions for new text**
-   - Use `app.py` (if implemented) or load `emotion_model.pkl` in your own script.
+4. **Run the web app**
+   ```bash
+   streamlit run app.py
+   ```
+   Then open your browser and go to the local URL shown in the terminal (usually http://localhost:8501).
 
-## 📝 Example Usage
+## 📝 Example: Predicting Emotions in Python
 ```python
 from joblib import load
 model = load('emotion_model.pkl')
@@ -70,4 +73,4 @@ For questions, open an issue or contact the maintainer.
 
 ---
 
-Made with ❤️ and Python 🐍 
+Made with ❤️, Streamlit, and Python 🐍 
